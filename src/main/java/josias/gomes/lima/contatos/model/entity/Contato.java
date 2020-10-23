@@ -13,9 +13,9 @@ import josias.gomes.lima.contatos.model.enums.SexoEnum;
 import lombok.Data;
 
 @Data
-@Table(name = "contato")
+@Table(name = "contatos")
 @Entity
-@SequenceGenerator(name  = "SQ_GENERATOR", sequenceName = "contato_seq", initialValue = 5, allocationSize = 1)
+@SequenceGenerator(name  = "SQ_GENERATOR", sequenceName = "contatos_seq", initialValue = 5, allocationSize = 1)
 public class Contato implements Serializable{
 	
 	/**

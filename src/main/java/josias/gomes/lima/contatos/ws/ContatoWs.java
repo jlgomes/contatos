@@ -1,7 +1,6 @@
 package josias.gomes.lima.contatos.ws;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
-import josias.gomes.lima.contatos.model.entity.Contato;
-import josias.gomes.lima.contatos.persistence.repository.IContatoRepository;
+import josias.gomes.lima.contatos.bo.ContatoBo;
+import josias.gomes.lima.contatos.dto.ContatoDto;
 
 @Api(value = "Contato", tags = "Contato")
 @Controller
@@ -26,26 +25,25 @@ import josias.gomes.lima.contatos.persistence.repository.IContatoRepository;
 public class ContatoWs {
 
 	@Autowired
-	private IContatoRepository iContatoRepository;
+	private ContatoBo contatoBo;
 	
 	@GetMapping("/all")
-    public List<Contato> getAll() {
-        return (List<Contato>) iContatoRepository.findAll();
+    public List<ContatoDto> getAll() {
+        return (List<ContatoDto>) contatoBo.getAll();
     }
  
     @PostMapping("/save")
-    void save(@RequestBody Contato Contato) {
-    	iContatoRepository.save(Contato);
+    void save(@RequestBody ContatoDto contato) {
+    	contatoBo.save(contato);
     }
 
     @GetMapping(path = "/{id}")
-    public Contato get(@PathVariable("id") long id) {
-    	Optional<Contato> contato = iContatoRepository.findById(id);
-    	return contato.isPresent() ? contato.get() : null ;
+    public ContatoDto get(@PathVariable("id") long id) {
+    	return contatoBo.get(id);
     }
 
     @DeleteMapping(path = "/{id}")
     void delete(@PathVariable("id") long id) {
-    	iContatoRepository.deleteById(id);
+    	contatoBo.delete(id);
     }
 }
