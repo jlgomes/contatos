@@ -15,11 +15,11 @@ public class Swagger extends ABaseSwagger{
 	}
 	
 	public  String getTitle() {
-		return "Sip Service";
+		return "Agenda de Contatos";
 	}
 	
 	public String getSubTitle(){
-		return "Documentation for Sip Services";
+		return "Documentação para a as apis da Agenda de Contatos";
 	}
 	
 	public String getTag(){
