@@ -1,4 +1,4 @@
-# contatos
+# Agenda de Contatos
 Este projeto se refere ao back-end de uma agenda de contatos.
 O front-end feito em Angular está em: https://github.com/jlgomes/contatos-front
 
