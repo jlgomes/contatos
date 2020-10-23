@@ -11,8 +11,8 @@
 	<groupId>josias.gomes.lima</groupId>
 	<artifactId>contatos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>contatos</name>
-	<description>Projeto para um CRUD de contatos</description>
+	<name>Agenda de Contatos</name>
+	<description>Projeto para uma agenda de contatos</description>
 
 	<properties>
 		<java.version>11</java.version>

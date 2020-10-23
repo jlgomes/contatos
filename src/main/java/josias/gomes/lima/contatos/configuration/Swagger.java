@@ -10,16 +10,18 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class Swagger extends ABaseSwagger{
 	
 	@RequestMapping("/")
-	  public String greeting() {
-	    return "index";
-	  }
+	public String greeting() {
+		return "index";
+	}
 	
 	public  String getTitle() {
 		return "Sip Service";
 	}
+	
 	public String getSubTitle(){
 		return "Documentation for Sip Services";
 	}
+	
 	public String getTag(){
 		return "DEVELOPMENT";
 	}
