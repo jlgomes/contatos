@@ -29,16 +29,6 @@ public abstract class ABaseSwagger {
 	public abstract String getSubTitle();
 	public abstract String getTag();
 
-//	 @Bean
-//	    public Docket api() {
-//	        return new Docket(DocumentationType.SWAGGER_2)
-//	                .genericModelSubstitutes(Mono.class, Flux.class, Publisher.class)
-//	                .select()
-//	                .apis(RequestHandlerSelectors.any())
-//	                .paths(PathSelectors.any())
-//	                .build();
-//	    }
-	 
 	@Bean
 	public Docket docket() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
