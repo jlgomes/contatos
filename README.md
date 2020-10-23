@@ -6,4 +6,4 @@ O front-end feito em Angular está em: https://github.com/jlgomes/contatos-front
 O backup da base de dados do PostgreSQL está na pasta ./banco
 
 # Swagger
-A rota para acessa o Swagger e ver as apis é: http://localhost:8080/swagger-ui.html
+A rota para acessar o Swagger e ver as apis é: http://localhost:8080/swagger-ui.html
