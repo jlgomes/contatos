@@ -19,7 +19,7 @@ public class Swagger extends ABaseSwagger{
 	}
 	
 	public String getSubTitle(){
-		return "Documentação para a as apis da Agenda de Contatos";
+		return "Documentação para as apis da Agenda de Contatos";
 	}
 	
 	public String getTag(){
