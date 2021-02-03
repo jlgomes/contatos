@@ -1,5 +1,8 @@
 package josias.gomes.lima.contatos.ws;
 
+import static josias.gomes.lima.contatos.constant.Paths.CONTACTS;
+import static josias.gomes.lima.contatos.constant.Paths.VERSION;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +20,10 @@ import io.swagger.annotations.Api;
 import josias.gomes.lima.contatos.bo.ContatoBo;
 import josias.gomes.lima.contatos.dto.ContatoDto;
 
-@Api(value = "Contato", tags = "Contato")
+@Api(value = VERSION + CONTACTS, tags = VERSION + CONTACTS)
 @Controller
 @RestController
-@RequestMapping(value = "/contato")
+@RequestMapping(value = VERSION + CONTACTS)
 @CrossOrigin(origins = "*")
 public class ContatoWs {
 
