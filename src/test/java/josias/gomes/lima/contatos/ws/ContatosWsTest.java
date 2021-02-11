@@ -1,5 +1,7 @@
 package josias.gomes.lima.contatos.ws;
 
+import static josias.gomes.lima.contatos.constant.Paths.CONTACTS;
+import static josias.gomes.lima.contatos.constant.Paths.VERSION;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
@@ -28,7 +30,8 @@ public class ContatosWsTest {
 	
 	@Test
 	public void greetingShouldReturnDefaultMessage() throws Exception {
-		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/contato/all",
+		assertThat(this.restTemplate.getForObject("http://localhost:" + port + VERSION + CONTACTS + "all",
 				String.class)).contains("Josias Gomes Lima");
 	}
+
 }

@@ -8,6 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 
+import static josias.gomes.lima.contatos.constant.Paths.CONTACTS;
+import static josias.gomes.lima.contatos.constant.Paths.VERSION;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
@@ -21,7 +23,7 @@ public class HttpRequestTest {
 
 	@Test
 	public void greetingShouldReturnDefaultMessage() throws Exception {
-		assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/contato/all",
+		assertThat(this.restTemplate.getForObject("http://localhost:" + port + VERSION + CONTACTS + "all",
 				String.class)).contains("Josias Gomes Lima");
 	}
 }

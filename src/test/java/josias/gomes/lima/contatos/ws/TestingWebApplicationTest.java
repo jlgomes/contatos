@@ -1,5 +1,7 @@
 package josias.gomes.lima.contatos.ws;
 
+import static josias.gomes.lima.contatos.constant.Paths.CONTACTS;
+import static josias.gomes.lima.contatos.constant.Paths.VERSION;
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -22,7 +24,7 @@ public class TestingWebApplicationTest {
 
 	@Test
 	public void shouldReturnDefaultMessage() throws Exception {
-		this.mockMvc.perform(get("/contato/all")).andDo(print()).andExpect(status().isOk())
+		this.mockMvc.perform(get(VERSION + CONTACTS + "all")).andDo(print()).andExpect(status().isOk())
 				.andExpect(content().string(containsString("Josias Gomes Lima")));
 	}
 }
