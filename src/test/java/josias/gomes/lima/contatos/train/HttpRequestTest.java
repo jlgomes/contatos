@@ -1,4 +1,4 @@
-package josias.gomes.lima.contatos.ws;
+package josias.gomes.lima.contatos.train;
 
 import org.junit.jupiter.api.Test;
 

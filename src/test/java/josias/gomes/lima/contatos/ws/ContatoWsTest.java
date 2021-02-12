@@ -8,6 +8,7 @@ import static org.hamcrest.core.Is.is;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 //import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -20,6 +21,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
+
+import com.google.gson.Gson;
 
 import josias.gomes.lima.contatos.dto.ContatoDto;
 import josias.gomes.lima.contatos.model.enums.SexoEnum;
@@ -51,7 +54,7 @@ public class ContatoWsTest {
     }
 
     @Test
-    public void getContatosById() throws Exception {
+    public void getContatoById() throws Exception {
     	ContatoDto contatoDto = createContato();
 
         given(contatoWs.get(contatoDto.getId())).willReturn(contatoDto);
@@ -64,12 +67,25 @@ public class ContatoWsTest {
     }
 
     @Test
-    public void removeUsersById() throws Exception {
+    public void removeContatoById() throws Exception {
     	ContatoDto contatoDto = createContato();
 
         mvc.perform(delete(VERSION + CONTACTS + contatoDto.getId())
 //                .with(user("blaze").password("Q1w2e3r4"))
                 .contentType(APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void saveContato() throws Exception {
+    	ContatoDto contatoDto = createContato();
+
+    	Gson gson = new Gson();
+    	
+        mvc.perform(post(VERSION + CONTACTS + "save")
+//                .with(user("blaze").password("Q1w2e3r4"))
+                .contentType(APPLICATION_JSON)
+                .content(gson.toJson(contatoDto)))
                 .andExpect(status().isOk());
     }
 

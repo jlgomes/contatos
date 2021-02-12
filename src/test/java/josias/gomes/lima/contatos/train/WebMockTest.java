@@ -1,4 +1,4 @@
-package josias.gomes.lima.contatos.ws;
+package josias.gomes.lima.contatos.train;
 
 import static josias.gomes.lima.contatos.constant.Paths.CONTACTS;
 import static josias.gomes.lima.contatos.constant.Paths.VERSION;
@@ -22,6 +22,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import josias.gomes.lima.contatos.bo.ContatoBo;
 import josias.gomes.lima.contatos.dto.ContatoDto;
 import josias.gomes.lima.contatos.model.enums.SexoEnum;
+import josias.gomes.lima.contatos.ws.ContatoWs;
 
 @WebMvcTest(ContatoWs.class)
 public class WebMockTest {

@@ -1,4 +1,4 @@
-package josias.gomes.lima.contatos.ws;
+package josias.gomes.lima.contatos.train;
 
 import static josias.gomes.lima.contatos.constant.Paths.CONTACTS;
 import static josias.gomes.lima.contatos.constant.Paths.VERSION;
