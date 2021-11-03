@@ -27,6 +27,10 @@ public class ContatoBo {
     public void save(ContatoDto contato) {
     	iContatoRepository.save(convertToContato(contato));
     }
+ 
+    public void update(ContatoDto contato) {
+    	iContatoRepository.save(convertToContato(contato));
+    }
 
     public ContatoDto get(long id) {
     	Optional<Contato> contato = iContatoRepository.findById(id);
